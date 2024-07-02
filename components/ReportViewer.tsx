@@ -14,11 +14,11 @@ import "@grapecity/activereports/styles/ar-js-viewer.css";
 const ViewerWrapper = (props: ViewerWrapperProps) => {
   const ref = React.useRef<Viewer>(null);
   React.useEffect(() => {
-    ref.current?.Viewer.open(props.reportUri);
     FontStore.registerFonts({
         name: "IPAゴシック",
         source: "fonts/ipag.ttf",
       });
+      ref.current?.Viewer.open(props.reportUri);
   }, [props.reportUri]);
   return <Viewer {...props} ref={ref} />;
 };
